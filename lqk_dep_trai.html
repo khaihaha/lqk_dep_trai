@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>lqk đẹp trai</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5ff;
+      text-align: center;
+      padding: 50px;
+    }
+
+    h2 {
+      font-size: 28px;
+      color: #333;
+    }
+
+    .answer {
+      display: inline-block;
+      margin: 20px;
+      padding: 15px 30px;
+      background-color: #ffffff;
+      border: 2px solid #007BFF;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      font-size: 22px;
+    }
+
+    .answer:hover {
+      background-color: #e0f0ff;
+    }
+
+    #result {
+      display: none;
+      margin-top: 40px;
+      font-size: 28px;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Bạn có thích tôi không?</h2>
+
+  <div id="answers">
+    <div class="answer" id="noBtn" onclick="wrongAnswer()">Không</div>
+    <div class="answer" id="yesBtn" onclick="rightAnswer()">Có</div>
+  </div>
+
+  <div id="result">💖 Mình cũng thích bạn 💖</div>
+
+  <script>
+    function wrongAnswer() {
+      const btn = document.getElementById("noBtn");
+      // Dịch nút sang vị trí khác
+      const x = Math.random() * 200 - 100;  // -100 đến +100 px
+      const y = Math.random() * 200 - 100;
+      btn.style.transform = `translate(${x}px, ${y}px) scale(0.6)`;
+    }
+
+    function rightAnswer() {
+      const yesBtn = document.getElementById("yesBtn");
+      yesBtn.style.transform = "scale(1.5)";
+      document.getElementById("answers").style.marginTop = "50px";
+      setTimeout(() => {
+        document.getElementById("answers").style.display = "none";
+        document.getElementById("result").style.display = "block";
+      }, 800); // Chờ 0.8 giây để hiệu ứng to lên xong
+    }
+  </script>
+
+</body>
+</html>
